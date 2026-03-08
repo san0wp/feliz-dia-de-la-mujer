@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Feliz Día de la Mujer</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align:center;
+    color:white;
+    overflow:hidden;
+    
+    background: linear-gradient(-45deg,#ff6ec4,#7873f5,#ff9a9e,#fad0c4);
+    background-size:400% 400%;
+    animation:fondo 10s ease infinite;
+}
+
+@keyframes fondo{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.contenedor{
+    z-index:2;
+}
+
+h1{
+    font-size:50px;
+    animation: aparecer 2s ease;
+}
+
+p{
+    font-size:22px;
+    margin:10px 0;
+    animation: aparecer 4s ease;
+}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* corazones */
+.corazon{
+    position:absolute;
+    color:#fff;
+    font-size:20px;
+    animation: flotar 6s linear infinite;
+}
+
+@keyframes flotar{
+    0%{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-10vh);
+        opacity:0;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="contenedor">
+<h1>🌸 Feliz Día de la Mujer 🌸</h1>
+
+<p>Hoy celebramos tu fuerza, tu valentía y tu belleza.</p>
+<p>Eres inspiración, inteligencia y amor.</p>
+<p>Gracias por hacer el mundo más fuerte, más justo y más hermoso.</p>
+<p>💜 Nunca olvides lo increíble que eres 💜</p>
+
+</div>
+
+<script>
+
+/* crear corazones animados */
+function crearCorazon(){
+    const corazon = document.createElement("div");
+    corazon.classList.add("corazon");
+    corazon.innerHTML="💜";
+
+    corazon.style.left=Math.random()*100+"vw";
+    corazon.style.fontSize=(Math.random()*20+10)+"px";
+    corazon.style.animationDuration=(Math.random()*3+3)+"s";
+
+    document.body.appendChild(corazon);
+
+    setTimeout(()=>{
+        corazon.remove();
+    },6000);
+}
+
+setInterval(crearCorazon,300);
+
+</script>
+
+</body>
+</html>
