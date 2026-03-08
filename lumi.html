@@ -2,74 +2,109 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Feliz Día de la Mujer</title>
+<title>Para Ti ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
 
 <style>
+
 body{
-    margin:0;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-family:Arial, Helvetica, sans-serif;
-    text-align:center;
-    color:white;
-    overflow:hidden;
-    
-    background: linear-gradient(-45deg,#ff6ec4,#7873f5,#ff9a9e,#fad0c4);
-    background-size:400% 400%;
-    animation:fondo 10s ease infinite;
+margin:0;
+font-family:'Poppins',sans-serif;
+color:white;
+text-align:center;
+overflow-x:hidden;
+
+background:linear-gradient(-45deg,#ff4e8a,#ff9a9e,#ff6ec4,#ffc3a0);
+background-size:400% 400%;
+animation:fondo 12s ease infinite;
 }
 
 @keyframes fondo{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
-.contenedor{
-    z-index:2;
+header{
+padding:100px 20px;
 }
 
 h1{
-    font-size:50px;
-    animation: aparecer 2s ease;
+font-family:'Great Vibes',cursive;
+font-size:70px;
+margin-bottom:10px;
 }
 
-p{
-    font-size:22px;
-    margin:10px 0;
-    animation: aparecer 4s ease;
+h2{
+font-size:30px;
 }
 
-@keyframes aparecer{
-    from{
-        opacity:0;
-        transform:translateY(40px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+.seccion{
+padding:60px 20px;
+max-width:900px;
+margin:auto;
+}
+
+.imagenes{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+margin-top:30px;
+}
+
+.imagenes img{
+width:250px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+transition:0.4s;
+}
+
+.imagenes img:hover{
+transform:scale(1.1);
+}
+
+button{
+margin-top:20px;
+padding:15px 30px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff4e8a;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+#mensaje{
+font-size:24px;
+margin-top:30px;
+min-height:60px;
 }
 
 /* corazones */
+
 .corazon{
-    position:absolute;
-    color:#fff;
-    font-size:20px;
-    animation: flotar 6s linear infinite;
+position:fixed;
+color:white;
+font-size:20px;
+animation:flotar 6s linear infinite;
 }
 
 @keyframes flotar{
-    0%{
-        transform:translateY(100vh);
-        opacity:1;
-    }
-    100%{
-        transform:translateY(-10vh);
-        opacity:0;
-    }
+0%{
+transform:translateY(100vh);
+opacity:1;
+}
+100%{
+transform:translateY(-10vh);
+opacity:0;
+}
 }
 
 </style>
@@ -77,33 +112,121 @@ p{
 
 <body>
 
-<div class="contenedor">
-<h1>🌸 Feliz Día de la Mujer 🌸</h1>
+<header>
 
-<p>Hoy celebramos tu fuerza, tu valentía y tu belleza.</p>
-<p>Eres inspiración, inteligencia y amor.</p>
-<p>Gracias por hacer el mundo más fuerte, más justo y más hermoso.</p>
-<p>💜 Nunca olvides lo increíble que eres 💜</p>
+<h1>Para Ti ❤️</h1>
+<h2>Una pequeña página para decirte algo importante</h2>
+
+</header>
+
+<section class="seccion">
+
+<p>
+Desde que llegaste a mi vida todo cambió.
+Cada día contigo es especial.
+Y hay muchas cosas que quiero decirte...
+</p>
+
+</section>
+
+<section class="seccion">
+
+<h2>💌 Mensajes para ti</h2>
+
+<p id="mensaje">
+Haz clic en el botón para ver lo que siento por ti ❤️
+</p>
+
+<button onclick="nuevoMensaje()">Mostrar mensaje</button>
+
+</section>
+
+<section class="seccion">
+
+<h2>🌹 Momentos que me recuerdan a ti</h2>
+
+<div class="imagenes">
+
+<img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7">
+<img src="https://images.unsplash.com/photo-1501901609772-df0848060b33">
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+<img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2">
+<img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+<img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df">
 
 </div>
 
+</section>
+
+<section class="seccion">
+
+<h2>❤️ Lo que siento por ti</h2>
+
+<p>
+No sé si las palabras alcanzan para explicar lo que siento,
+pero sé que cada sonrisa tuya ilumina mi día.
+</p>
+
+<p>
+Si pudiera elegir mil veces,
+te volvería a elegir siempre.
+</p>
+
+</section>
+
 <script>
 
-/* crear corazones animados */
+const mensajes = [
+
+"Eres la persona que hace que mi mundo sea más bonito.",
+"Contigo aprendí que el amor puede ser simple y perfecto.",
+"Tu sonrisa tiene el poder de alegrar mis días.",
+"No sé cómo explicarlo, pero contigo todo se siente bien.",
+"Eres la casualidad más hermosa que llegó a mi vida.",
+"Cada momento contigo se vuelve especial.",
+"Si el amor tuviera nombre, probablemente sería el tuyo.",
+"Tu presencia hace que todo tenga más sentido.",
+"Eres mi pensamiento favorito del día.",
+"Mi lugar favorito siempre será a tu lado.",
+"A veces pienso que el universo conspiró para que nos encontráramos.",
+"Si pudiera detener el tiempo, lo haría en los momentos contigo.",
+"Eres la razón por la que sonrío sin motivo.",
+"Mi día mejora solo con saber que existes.",
+"Tu forma de ser es lo que más me enamora.",
+"Cada día descubro algo nuevo que me gusta de ti.",
+"Eres más especial de lo que imaginas.",
+"Si tuviera que resumir mi felicidad, empezaría contigo.",
+"Tu voz, tu risa, tu forma de ser… todo me encanta.",
+"Simplemente me gustas muchísimo."
+
+];
+
+function nuevoMensaje(){
+
+let numero = Math.floor(Math.random()*mensajes.length);
+
+document.getElementById("mensaje").innerText = mensajes[numero];
+
+}
+
+/* corazones */
+
 function crearCorazon(){
-    const corazon = document.createElement("div");
-    corazon.classList.add("corazon");
-    corazon.innerHTML="💜";
 
-    corazon.style.left=Math.random()*100+"vw";
-    corazon.style.fontSize=(Math.random()*20+10)+"px";
-    corazon.style.animationDuration=(Math.random()*3+3)+"s";
+const corazon=document.createElement("div");
+corazon.classList.add("corazon");
+corazon.innerHTML="❤️";
 
-    document.body.appendChild(corazon);
+corazon.style.left=Math.random()*100+"vw";
+corazon.style.fontSize=(Math.random()*20+10)+"px";
+corazon.style.animationDuration=(Math.random()*3+3)+"s";
 
-    setTimeout(()=>{
-        corazon.remove();
-    },6000);
+document.body.appendChild(corazon);
+
+setTimeout(()=>{
+corazon.remove();
+},6000);
+
 }
 
 setInterval(crearCorazon,300);
